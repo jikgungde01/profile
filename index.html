@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Gungdedhita</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a,#020617);
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND GLOW */
+
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:#38bdf8;
+filter:blur(180px);
+opacity:0.15;
+top:-200px;
+left:-200px;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:20px;
+font-weight:600;
+color:#38bdf8;
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+opacity:0.8;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* underline animation */
+
+nav ul li a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:#38bdf8;
+left:0;
+bottom:-6px;
+transition:0.3s;
+}
+
+nav ul li a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:100px 10%;
+flex-wrap:wrap;
+animation:fadeUp 1s ease;
+}
+
+.hero img{
+width:230px;
+height:230px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #38bdf8;
+box-shadow:0 0 40px #38bdf8;
+animation:glow 3s infinite alternate;
+}
+
+.hero-text h1{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:#38bdf8;
+}
+
+.hero-text p{
+opacity:0.8;
+max-width:420px;
+margin-bottom:25px;
+line-height:1.7;
+}
+
+.btn{
+display:inline-block;
+padding:12px 26px;
+background:#38bdf8;
+color:#020617;
+border-radius:8px;
+font-weight:500;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#0ea5e9;
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(56,189,248,0.3);
+}
+
+/* SECTION */
+
+.section{
+padding:80px 10%;
+}
+
+.section-title{
+font-size:30px;
+margin-bottom:40px;
+color:#38bdf8;
+text-align:center;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+/* CARD */
+
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:25px;
+border-radius:16px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.6);
+border:1px solid rgba(56,189,248,0.4);
+}
+
+.card p{
+opacity:0.85;
+line-height:1.6;
+}
+
+/* CONTACT */
+
+.contact a{
+display:block;
+margin:12px 0;
+text-decoration:none;
+color:white;
+opacity:0.8;
+transition:0.3s;
+}
+
+.contact a:hover{
+color:#38bdf8;
+transform:translateX(5px);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+margin-top:50px;
+opacity:0.7;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 20px #38bdf8;
+}
+to{
+box-shadow:0 0 60px #38bdf8;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">Gungdedhita</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="images/gungde.jpg">
+
+<div class="hero-text">
+
+<h1>Hello, I'm <span>Gungdedhita</span></h1>
+
+<p>
+Saya adalah mahasiswa jurusan Informatika yang memiliki minat besar dalam dunia teknologi, pengembangan web, dan inovasi digital. 
+Saya senang mempelajari hal baru, 
+membangun proyek berbasis teknologi, serta menciptakan solusi yang bermanfaat melalui pemrograman dan sistem informasi.
+</p>
+
+<a class="btn" href="#contact">Contact Me</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2 class="section-title">Tentang Saya</h2>
+
+<div class="grid">
+
+<div class="card">
+<p><b>Nama</b><br>I Dewa Agung Gede Kartika Jagaddhita</p>
+</div>
+
+<div class="card">
+<p><b>NIM</b><br>2313231030</p>
+</div>
+
+<div class="card">
+<p><b>Jurusan</b><br>Informatika</p>
+</div>
+
+<div class="card">
+<p><b>Universitas</b><br>UHN I Gusti Bagus Sugriwa Denpasar</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<h2 class="section-title">Kontak</h2>
+
+<div class="card contact">
+
+<a href="#">📧 Email : gungdedhita02@gmail.com</a>
+<a href="#">📷 Instagram : @gungdedhita02</a>
+<a href="#">📱 WhatsApp : 087761483450</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Portfolio | Gungdedhita
+
+</footer>
+
+<script>
+
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+
+const trigger = window.innerHeight * 0.85;
+
+cards.forEach(card=>{
+
+const top = card.getBoundingClientRect().top;
+
+if(top < trigger){
+card.classList.add('show');
+}
+
+});
+
+}
+
+reveal();
+
+</script>
+
+</body>
+</html>
